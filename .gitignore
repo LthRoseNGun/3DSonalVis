@@ -1,0 +1,8 @@
+# skip binary, temporary and user-specific files
+ 
+[Bb]in/
+[Oo]bj/
+*.suo
+*.sdf
+*.user
+*.opendb

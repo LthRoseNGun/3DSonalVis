@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{a70d54f7-16b1-493f-8a02-17e832572a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\imgui">
+      <UniqueIdentifier>{deb6fcf8-3423-40c8-be29-19e3247e5c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{ba49d5ef-1a0f-4dac-838c-a63c7d93eb69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ColorGradient.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FileIO.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Octree.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OctreeIterator.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OctreeNode.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Point.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PointCloud.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sample.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Shader.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArcballCamera.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BilateralFilter.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\dirent.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imconfig.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imgui.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imgui_filebrowser.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imgui_impl_glfw.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imgui_impl_opengl3.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imgui_internal.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imstb_rectpack.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imstb_textedit.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\imgui\imstb_truetype.h">
+      <Filter>source\imgui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\PointCloud.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sample.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3DSonalVis.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArcballCamera.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui.cpp">
+      <Filter>source\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_demo.cpp">
+      <Filter>source\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_draw.cpp">
+      <Filter>source\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_filebrowser.cpp">
+      <Filter>source\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_impl_glfw.cpp">
+      <Filter>source\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_impl_opengl3.cpp">
+      <Filter>source\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdparty\imgui\imgui_widgets.cpp">
+      <Filter>source\imgui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\shaders\shader.vs">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="src\shaders\shader.frag">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+</Project>
