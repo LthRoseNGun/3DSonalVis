@@ -19,38 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="3rdparty\imgui\dirent.h" />
-    <ClInclude Include="3rdparty\imgui\imconfig.h" />
-    <ClInclude Include="3rdparty\imgui\imgui.h" />
-    <ClInclude Include="3rdparty\imgui\imgui_filebrowser.h" />
-    <ClInclude Include="3rdparty\imgui\imgui_impl_glfw.h" />
-    <ClInclude Include="3rdparty\imgui\imgui_impl_opengl3.h" />
-    <ClInclude Include="3rdparty\imgui\imgui_internal.h" />
-    <ClInclude Include="3rdparty\imgui\imstb_rectpack.h" />
-    <ClInclude Include="3rdparty\imgui\imstb_textedit.h" />
-    <ClInclude Include="3rdparty\imgui\imstb_truetype.h" />
-    <ClInclude Include="src\ArcballCamera.h" />
-    <ClInclude Include="src\BilateralFilter.h" />
-    <ClInclude Include="src\ColorGradient.h" />
-    <ClInclude Include="src\FileIO.h" />
-    <ClInclude Include="src\Octree.h" />
-    <ClInclude Include="src\OctreeIterator.h" />
-    <ClInclude Include="src\OctreeNode.h" />
-    <ClInclude Include="src\Point.h" />
-    <ClInclude Include="src\PointCloud.h" />
-    <ClInclude Include="src\Sample.h" />
-    <ClInclude Include="src\Shader.h" />
-    <ClInclude Include="src\types.h" />
-    <ClInclude Include="src\utilities.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="3rdparty\imgui\imgui.cpp" />
-    <ClCompile Include="3rdparty\imgui\imgui_demo.cpp" />
-    <ClCompile Include="3rdparty\imgui\imgui_draw.cpp" />
-    <ClCompile Include="3rdparty\imgui\imgui_filebrowser.cpp" />
-    <ClCompile Include="3rdparty\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="3rdparty\imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="3rdparty\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\3DSonalVis.cpp" />
     <ClCompile Include="src\ArcballCamera.cpp" />
     <ClCompile Include="src\PointCloud.cpp" />
@@ -58,8 +26,23 @@
     <ClCompile Include="src\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\shaders\shader.frag" />
-    <None Include="src\shaders\shader.vs" />
+    <ClInclude Include="include\ArcballCamera.h" />
+    <ClInclude Include="include\BilateralFilter.h" />
+    <ClInclude Include="include\ColorGradient.h" />
+    <ClInclude Include="include\FileIO.h" />
+    <ClInclude Include="include\Octree.h" />
+    <ClInclude Include="include\OctreeIterator.h" />
+    <ClInclude Include="include\OctreeNode.h" />
+    <ClInclude Include="include\Point.h" />
+    <ClInclude Include="include\PointCloud.h" />
+    <ClInclude Include="include\Sample.h" />
+    <ClInclude Include="include\Shader.h" />
+    <ClInclude Include="include\types.h" />
+    <ClInclude Include="include\utilities.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\shader.frag" />
+    <None Include="shader\shader.vs" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -176,10 +159,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Wajov\source\repos\3DSonalVis\include;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\glad;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\glfw;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\imgui;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\imguiaddons;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\ann;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad.lib;glfw3.lib;imgui.lib;imguiaddons.lib;ann.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -188,14 +174,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\glad;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\glfw;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\imgui;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\imguiaddons;C:\Users\Wajov\source\repos\3DSonalVis\3rdparty\lib\ann;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad.lib;glfw3.lib;imgui.lib;imguiaddons.lib;ann.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
