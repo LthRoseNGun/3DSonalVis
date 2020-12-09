@@ -1,9 +1,8 @@
 ﻿// Std. Includes
 #include <string>
 
-// GLEW
-#define GLEW_STATIC
-#include <GL/glew.h>
+// GLAD
+#include <glad/glad.h>
 
 // GLFW
 #include <GLFW/glfw3.h>
@@ -21,11 +20,10 @@
 #include <glm/gtc/type_ptr.hpp>
 
 // ImGui
-#include "imgui/imgui.h"
-#include "imgui/imgui_impl_glfw.h"
-#include "imgui/imgui_impl_opengl3.h"
-#include "imgui/imgui_filebrowser.h"
-
+#include <imgui.h>
+#include <imgui_impl_opengl3.h>
+#include <imgui_impl_glfw.h>
+#include <ImGuiFileBrowser.h>
 
 // Properties
 GLuint screenWidth = 1280, screenHeight = 720;
@@ -85,9 +83,8 @@ int main()
     glfwSetCursorPosCallback(window, cursorCallback);
     glfwSetMouseButtonCallback(window, mouseButtonCallback);
 
-    // Initialize GLEW to setup the OpenGL Function pointers
-    glewExperimental = GL_TRUE;
-    glewInit();
+    // Initialize GLAD to setup the OpenGL Function pointers
+    gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
     // Define the viewport dimensions
     glViewport(0, 0, screenWidth, screenHeight);
@@ -99,7 +96,7 @@ int main()
     setupImGuiContext(window);
 
     // Setup and compile our shaders
-    Shader shader("./src/shaders/shader.vs", "./src/shaders/shader.frag");
+    Shader shader("shader/shader.vs", "shader/shader.frag");
     
     GLuint VBOs[2], VAOs[2];
     glGenVertexArrays(2, VAOs);
@@ -373,7 +370,7 @@ void cursorCallback(GLFWwindow* window, double x, double y) {
             arcballCamera.rotate(prevMouse, curMouse);
         }
         else if (mouseEvent == 2) {
-            arcballCamera.pan((curMouse - prevMouse) * 0.1);
+            arcballCamera.pan((curMouse - prevMouse) * 0.1f);
         }
     }
     else {
