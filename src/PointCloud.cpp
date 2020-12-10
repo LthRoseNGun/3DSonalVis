@@ -19,9 +19,6 @@ void PointCloud::init(GLfloat* raw, int num, double threshold) {
     for (int i = 0; i < pvNum; i++) {
         pFlag[i] = true;
         ampMap[getPointStr(vPoints[i * 3], vPoints[i * 3 + 1], vPoints[i * 3 + 2])] = pAmp[i];
-        if (abs(vPoints[i * 3 + 2] - 11.16) < 0.01) {
-            cout << getPointStr(vPoints[i * 3], vPoints[i * 3 + 1], vPoints[i * 3 + 2]) << endl;
-        }
     }
     updateProperties();
 }

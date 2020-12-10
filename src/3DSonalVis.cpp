@@ -249,11 +249,12 @@ int main()
                     pointCloud->reset(ampThreshold);
                     toRebind = true;
                 }
-                ImGui::SliderFloat("amplitude threshold", &ampThreshold, 0.0f, 1.0f);
+
                 ImGui::SliderFloat("(%)isolate points threshold (ANN param)", &pThreshold, 0.0f, 10.0f);
                 ImGui::SliderFloat("(%)neighbor radius (ANN param)", &pRadius, 0.0f, 100.0f);
                 ImGui::SliderFloat("(cm)bilateral filter radius", &bRadius, 0.0f, 5.0f);
             }
+            ImGui::SliderFloat("amplitude threshold", &ampThreshold, 0.0f, 1.0f);
 
             ImGui::End();
         }
@@ -310,7 +311,7 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mod)
     if (action == GLFW_PRESS) {
         switch (key) {
         case GLFW_KEY_ESCAPE:
-            glfwSetWindowShouldClose(window, GL_TRUE);
+            //glfwSetWindowShouldClose(window, GL_TRUE);
             return;
         case GLFW_KEY_C:
             clip(rectangle[0], rectangle[1], rectangle[12], rectangle[13]);
